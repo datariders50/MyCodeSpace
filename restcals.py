@@ -24,3 +24,10 @@ else:
     # Handle errors
     print(f"Failed to fetch data: {response.status_code}")
     print(response.text)
+    
+    
+date_str = '23/10/2023'
+date_format = '%d/%m/%Y'
+datetime_obj = datetime.strptime(date_str, date_format)
+epoch_time = datetime_obj.timestamp()
+print(f"Epoch time: {epoch_time}")
