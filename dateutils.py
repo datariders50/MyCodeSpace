@@ -18,3 +18,27 @@ start_epoch, end_epoch = get_start_end_epoch_for_day(year, month, day)
 
 print("Start of day:", start_epoch)
 print("End of day:", end_epoch)
+
+
+
+from datetime import datetime, timedelta
+
+def get_all_dates(start_date, end_date):
+    # Create a list to store dates
+    date_list = []
+    # Start from the start date
+    current_date = start_date
+    
+    while current_date <= end_date:
+        date_list.append(current_date)
+        current_date += timedelta(days=1)
+    
+    return date_list
+
+# Example usage
+start_date = datetime(2024, 10, 1)
+end_date = datetime(2024, 10, 10)
+
+dates = get_all_dates(start_date, end_date)
+for date in dates:
+    print(date.strftime("%Y-%m-%d"))
